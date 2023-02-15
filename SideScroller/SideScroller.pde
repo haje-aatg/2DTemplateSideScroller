@@ -1,14 +1,13 @@
-//  SideScroller by 
-// An assignment template
-//
+//  SideScroller by haje-aatg (Hans-ChristianBJensen)
+// An assignment template for a 2D array containing objects
+// Contains no comments, since the student needs to make these
 // 
-// Link: https://www.openprocessing.org/sketch/816638
+// Link: https://github.com/haje-aatg/2DTemplateSideScroller
 
 World[][] worldOne;
 Player player = new Player();
 int squaresize = 10;
 WorldObject exit;
-//PVector exit;
 boolean[] downKeys = new boolean[256];
 boolean[] downCodedKeys = new boolean[256];
 
@@ -42,7 +41,6 @@ void setup() {
 }
 
 void draw() {
-  println(worldOne[0].length);
   if (player.place.y<worldOne[0].length-1) {
     if (player.falling(worldOne[int(player.place.x)][int(player.place.y+1)].passable)) {
       player.action(false);

@@ -1,3 +1,9 @@
+//  SideScroller by haje-aatg (Hans-ChristianBJensen)
+// An assignment template for a 2D array containing objects
+// Contains no comments, since the student needs to make these
+//
+// Link: https://github.com/haje-aatg/2DTemplateSideScroller
+
 class World {
   byte health;
   boolean passable, destructible;
@@ -7,7 +13,7 @@ class World {
     health = 10;
     passable = boolean(round(random(0, 1)));
     if (passable == false) {
-      destructible = boolean(round(random(0, 1)));
+      destructible = random(0, 100)>15 ? true : false;
       worldColor = color(214, 146, 43);
     } else {
       worldColor = color(38, 184, 250);
@@ -23,7 +29,7 @@ class World {
     } else {
       if (random(0, 100)<85) {
         passable = false;
-        destructible = boolean(round(random(0, 1)));
+        destructible = random(0, 100)>15 ? true : false;
         worldColor = color(214*(int(destructible)+1)/2, 146, 43);
       } else {
         passable = true;

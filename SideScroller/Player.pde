@@ -1,3 +1,9 @@
+//  SideScroller by haje-aatg (Hans-ChristianBJensen)
+// An assignment template for a 2D array containing objects
+// Contains no comments, since the student needs to make these
+// 
+// Link: https://github.com/haje-aatg/2DTemplateSideScroller
+
 class Player extends WorldObject {
   Player() {
     super();
@@ -90,8 +96,10 @@ class Player extends WorldObject {
       direction=sumDirection;
     }
     if (downKeys[97]) {
-      print("Attacking! " + direction);
-      worldOne[int(place.x+direction.x)][int(place.y+direction.y)].attacked(byte(1));
+      if (int(place.x+direction.x) >= 0 && int(place.x+direction.x) <= worldOne.length-1 && int(place.y+direction.y) <= worldOne[0].length-1) {
+        print("Attacking! " + direction);
+        worldOne[int(place.x+direction.x)][int(place.y+direction.y)].attacked(byte(1));
+      }
     }
   }
 }
